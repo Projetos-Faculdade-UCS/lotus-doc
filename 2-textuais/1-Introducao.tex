@@ -1,0 +1,77 @@
+\chapter{INTRODUÇÃO}
+
+No cenário atual, a gestão eficiente de ativos de TI é um aspecto essencial para o sucesso das organizações. Com o crescente aumento na quantidade e diversidade de equipamentos, como computadores, impressoras e monitores, o controle desses recursos tornou-se uma tarefa desafiadora, especialmente em empresas de médio e grande porte. A ausência de uma gestão organizada pode levar a problemas como perda de dispositivos, dificuldade em rastrear histórico de alterações e movimentações, além de impactos negativos na produtividade e na tomada de decisão. Por isso, soluções tecnológicas que permitam rastrear, organizar e gerenciar esses ativos são fundamentais para garantir a eficiência operacional e o alinhamento com as práticas modernas de governança de TI.
+
+Neste contexto, o desenvolvimento de soluções como o sistema LOTUS exige a aplicação de metodologias robustas de engenharia de software, que proporcionem escalabilidade, modularidade e manutenção simplificada. A arquitetura em camadas, amplamente utilizada no desenvolvimento de sistemas distribuídos, se destaca por separar as responsabilidades em diferentes níveis, como interface do usuário, lógica de negócio e acesso a dados, garantindo maior organização e clareza no código.
+
+Adicionalmente, o uso de padrões de projeto (design patterns) desempenha um papel crucial na criação de sistemas eficientes e bem estruturados. Esses padrões oferecem soluções testadas para problemas recorrentes no desenvolvimento de software, promovendo a reutilização de código, a redução de complexidade e a facilidade de manutenção. Ao combinar esses dois conceitos, arquitetura em camadas e padrões de projeto, é possível desenvolver sistemas mais robustos, escaláveis e alinhados às melhores práticas da indústria, como demonstrado no projeto LOTUS.
+
+\section{Arquitetura em Camadas}
+
+A arquitetura em camadas é um modelo amplamente utilizado no desenvolvimento de software para organizar e estruturar sistemas em módulos independentes, facilitando a manutenção, a escalabilidade e a reutilização do código. Essa abordagem divide as responsabilidades do sistema em diferentes camadas, cada uma desempenhando um papel específico, como interface com o usuário, lógica de negócio e acesso a dados. Essa separação clara de responsabilidades promove maior modularidade e facilita o desenvolvimento colaborativo, além de permitir a substituição ou atualização de componentes individuais sem impactar significativamente outras partes do sistema \cite{bass2003}.
+
+Entre os modelos mais comuns de arquitetura em camadas estão o \textit{Model-View-Controller} (MVC) e a arquitetura \textit{N-tier}. Ambos apresentam características distintas que os tornam adequados para diferentes tipos de projetos.
+
+\subsection{Modelo MVC (Model-View-Controller)}
+
+O padrão \textit{Model-View-Controller} (MVC) é uma abordagem popular para a organização de aplicações com base na separação de responsabilidades. Ele divide o sistema em três componentes principais:
+
+\begin{itemize}
+    \item \textbf{Model}: Representa os dados e as regras de negócio do sistema. É responsável por acessar e gerenciar as informações armazenadas, além de implementar a lógica que governa as operações desses dados \cite{fowler2003}.
+    \item \textbf{View}: Trata da interface com o usuário, exibindo as informações do \textit{Model} e capturando as interações realizadas pelo usuário.
+    \item \textbf{Controller}: Atua como intermediário entre o \textit{Model} e a \textit{View}, processando as entradas do usuário e coordenando as respostas apropriadas por meio da atualização dos dados ou da interface.
+\end{itemize}
+
+Essa separação permite que cada componente seja desenvolvido e testado independentemente, promovendo maior flexibilidade e manutenção do sistema. Segundo Fowler \cite{fowler2003}, o padrão MVC é fundamental para aplicações que requerem interfaces de usuário dinâmicas e frequentemente atualizadas, permitindo a escalabilidade e a adaptação às mudanças tecnológicas.
+
+\subsection{Arquitetura N-tier}
+
+A arquitetura \textit{N-tier} é uma extensão da ideia de separação de camadas, frequentemente utilizada em sistemas distribuídos. Ela organiza o sistema em múltiplas camadas, sendo as mais comuns:
+
+\begin{itemize}
+    \item \textbf{Camada de Apresentação (Presentation Layer)}: Responsável pela interação com o usuário, como interfaces gráficas ou APIs.
+    \item \textbf{Camada de Aplicação ou Negócio (Business Logic Layer)}: Contém a lógica de negócio, processando as regras e operações do sistema \cite{richards2015}.
+    \item \textbf{Camada de Dados (Data Layer)}: Gerencia o acesso e a manipulação dos dados armazenados, geralmente em bancos de dados.
+\end{itemize}
+
+O termo \textit{N-tier} refere-se à possibilidade de adicionar outras camadas especializadas, como uma camada de serviços ou \textit{middleware}, dependendo da complexidade do sistema. Essa arquitetura é ideal para sistemas escaláveis e distribuídos, já que cada camada pode ser executada em servidores diferentes, permitindo a distribuição de carga e o aumento da robustez \cite{bass2003}.
+
+\section{Introdução aos Design Patterns}
+
+Os \textit{Design Patterns} (Padrões de Projeto) são soluções reutilizáveis para problemas recorrentes no desenvolvimento de software. Eles representam boas práticas organizadas e documentadas, que ajudam a criar sistemas mais flexíveis, escaláveis e fáceis de manter. A aplicação de padrões de projeto permite que desenvolvedores evitem reinventar soluções e se beneficiem de estratégias comprovadas para lidar com desafios de design e implementação \cite{gamma1994}.
+
+Segundo Gamma et al. \cite{gamma1994}, um \textit{Design Pattern} é composto por quatro elementos principais:
+
+\begin{itemize}
+    \item \textbf{Nome (Name)}: Um identificador único que descreve o padrão e facilita sua referência.
+    \item \textbf{Problema (Problem)}: O contexto e as circunstâncias em que o padrão pode ser aplicado, incluindo os problemas que resolve.
+    \item \textbf{Solução (Solution)}: A descrição abstrata de como resolver o problema, incluindo componentes, relações e interações.
+    \item \textbf{Consequências (Consequences)}: Os resultados e trocas (trade-offs) associados ao uso do padrão, como benefícios e limitações.
+\end{itemize}
+
+Os padrões de projeto são geralmente categorizados em três grupos principais, de acordo com o tipo de problema que resolvem:
+
+\begin{itemize}
+    \item \textbf{Padrões Criacionais (Creational Patterns)}: Focados na criação de objetos de maneira flexível e independente de sua implementação. Exemplos incluem o padrão \textit{Singleton} e o \textit{Factory Method}.
+    \item \textbf{Padrões Estruturais (Structural Patterns)}: Tratam da composição de classes e objetos para formar estruturas maiores. Exemplos incluem \textit{Adapter} e \textit{Composite}.
+    \item \textbf{Padrões Comportamentais (Behavioral Patterns)}: Relacionados à interação e comunicação entre objetos. Exemplos incluem \textit{Observer} e \textit{Strategy}.
+\end{itemize}
+
+A adoção de \textit{Design Patterns} não apenas simplifica o desenvolvimento, mas também facilita a comunicação entre desenvolvedores, uma vez que os padrões servem como uma linguagem comum para descrever soluções \cite{gamma1994}.
+
+
+
+
+
+
+
+
+
+
+\section{Objetivo}
+
+O principal objetivo deste projeto é desenvolver o LOTUS, uma solução distribuída para o gerenciamento eficiente de ativos de TI, com foco na organização e rastreabilidade de equipamentos como computadores, impressoras e monitores em empresas de médio e grande porte. A proposta busca facilitar a identificação, localização e monitoramento desses recursos, incluindo a manutenção de um histórico detalhado de alterações e movimentações, promovendo maior controle e eficiência na gestão de TI.
+
+Além de atender a um caso prático de necessidade empresarial, o projeto também possui objetivos acadêmicos e técnicos. Ele visa explorar e aplicar conceitos avançados de engenharia de software, como arquitetura em camadas e \textit{Design Patterns}, para garantir modularidade, escalabilidade e manutenção simplificada do sistema. Esses conceitos foram integrados de maneira a proporcionar uma melhor compreensão das boas práticas de desenvolvimento e do uso de soluções arquiteturais na construção de sistemas complexos.
+
+O projeto também objetiva contribuir para a capacitação técnica da equipe envolvida, promovendo o aprendizado prático de tecnologias e metodologias de desenvolvimento de software. Ao final, espera-se que o LOTUS não apenas atenda às demandas do caso real que o originou, mas também sirva como uma base sólida para futuros aprimoramentos e aplicações em diferentes contextos empresariais.

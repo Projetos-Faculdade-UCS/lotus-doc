@@ -1,0 +1,449 @@
+\chapter{COMANDOS LATEX}
+\label{cap:comandos}
+
+Este capítulo tem por objetivo descrever os comandos \textit{LaTex} para a confecção da monografia. A \autoref{sec:divisao} descreve como é a divisão de documentos em conformidade com a ABNT NBR 6024 \cite{NBR6024:2012}. 
+
+Consulte os manuais do \abnTeX\
+\cite{abntex2classe,abntex2cite,abntex2cite-alf} para maiores detalhes sobre o uso deste template. Exemplos e informações adicionais de uso de \abnTeX\ e de \LaTeX podem ser encontrados em \citeonline{abntex2modelo}.
+
+\section{DIVISÃO DE DOCUMENTOS}
+\label{sec:divisao}
+
+A principal divisão de uma monografia é chamada de seção primária (conhecida por capítulo)\cite{NBR6024:2012}. Para criar um capítulo, deve-se utilizar o comando \verb!\chapter{}!. Por exemplo, este capítulo foi definido conforme o comando:
+
+\begin{verbatim}
+    \chapter{COMANDOS LATEX}
+\end{verbatim}
+
+Um capítulo é dividido em seções, chamadas de secundárias. Uma seção secundária é criada utilizando o comando
+
+\begin{verbatim}
+    \section{<nome da seção>} 
+\end{verbatim}
+
+Da mesma maneira que um capítulo é referenciado, qualquer seção (não importa o seu nível) pode ser referenciada utilizando o \verb!autoref{}!
+
+% ---
+\subsection{Seção Terciária}
+\label{sec:secaoTerciaria}
+% ---
+
+ Uma seção secundária pode ser dividida em mais seções, chamadas de terciária. Esta é a \autoref{sec:secaoTerciaria}. Uma seção terciária é criada utilizando o comando 
+
+\begin{verbatim}
+    \subsection{<nome da subseção>} 
+\end{verbatim}
+
+\subsubsection{Seção Quaternária}
+\label{sec:secaoQuaternaria}
+
+A subdivisão do texto a partir de uma seção terciária é chamada de seção quaternária. Uma seção quaternária é criada utilizando o comando 
+
+\begin{verbatim}
+    \subsubsection{<nome da subseção>} 
+\end{verbatim}
+
+Não se recomenda a divisão do texto a partir de uma seção quaternária. 
+
+\section{REFERENCIAR SEÇÕES, CAPÍTULOS E OUTROS ELEMENTOS}
+
+Em um texto técnico, é muito comum que capítulos ou seções sejam referenciados. Além de existir uma formatação própria para realizar o referenciamento, deve-se garantir que a numeração esteja sempre correta (a numeração das divisões do documento podem mudar durante a sua construção). 
+
+De modo a eliminar qualquer dúvida sobre os termos a serem utilizados ao referenciar, somente as palavras apêndice, anexo, capítulo e seção devem ser utilizadas para referenciar qualquer divisão do documento. Não existe lugar para o uso de subseção ou troca do termo capítulo por seção, ou vice-versa. Além disso, como o termo é seguido por um número identificador, a primeira letra deve estar em maiúscula. 
+
+Para que a divisão do documento seja referenciada conforme as normas, deve-se adicionar o comando de definição de rótulo \verb!\label{}!. Por exemplo, este capítulo foi definido conforme os comandos:
+
+\begin{verbatim}
+     \chapter{COMANDOS LATEX}
+     \label{cap:comandos}
+\end{verbatim}
+
+Para referenciar uma divisão, utiliza-se o comando \verb!autoref{}! com o rótulo designado. Além de realizar uma referência ao número da divisão, o comando produz o termo apropriado (depende do tipo de título). 
+
+No caso deste capítulo, o comando \verb!\autoref{cap:comandos}! produzirá o texto \autoref{cap:comandos}. Nota-se que o capítulo deve possuir um rótulo definido como "cap:estrutura". No caso de seções, o texto produzido é "\autoref{sec:secaoTerciaria}." ou "\autoref{sec:secaoQuaternaria}." Em todos os casos, o termo é gerado com a primeira letra maiúscula conforme a formatação da  \ac{ABNT}. 
+
+No caso de múltiplas seções serem referenciadas, deve-se utilizar o termo da divisão seguido pelo comando \verb!\ref{}! para a inserção do número. Por exemplo,
+
+"As Seções \ref{sec:enum} e \ref{sec:divisao} tratam..." 
+
+"Os Capítulos \ref{cap:configuracao} e \ref{cap:consideracoes} apresentam..."
+
+É importante que o termo tenha a primeira letra em maiúsculo. 
+
+
+\section{ILUSTRAÇÕES}
+
+As ilustrações incluem figuras, tabelas, quadros e algoritmos. Quando utilizadas, estas ilustrações produzem uma lista na parte pré-textual do documento. 
+
+\subsection{Figuras}
+
+As ilustrações devem sempre ter numeração contínua e única em todo o documento:
+
+\begin{citacao}
+	Qualquer que seja o tipo de ilustração, sua identificação aparece na parte
+	superior, precedida da palavra designativa (desenho, esquema, fluxograma,
+	fotografia, gráfico, mapa, organograma, planta, quadro, retrato, figura,
+	imagem, entre outros), seguida de seu número de ordem de ocorrência no texto,
+	em algarismos arábicos, travessão e do respectivo título. Após a ilustração, na
+	parte inferior, indicar a fonte consultada (elemento obrigatório, mesmo que
+	seja produção do próprio autor), legenda, notas e outras informações
+	necessárias à sua compreensão (se houver). A ilustração deve ser citada no
+	texto e inserida o mais próximo possível do trecho a que se
+	refere \cite{NBR14724:2011}.
+\end{citacao}
+
+A \autoref{fig:exemploFigura} mostra um exemplo de figura, com os principais elementos descritos pela norma. A referência a uma figura deve utilizar o comando \verb!autoref{}!. O comando \texttt{UCSfigura} garante o alinhamento da fonte no lado esquerdo da figura.  
+
+    \begin{figure}[!ht]
+    	\caption{Exemplo de figura}
+    	\centering 
+    	\label{fig:exemploFigura}
+    	\UCSfigura {}{ 
+    		\includegraphics{figuras/estruturaTCC.png}
+    		}{
+    		\fonte{Adaptado de \citeonline{guiaUCS}.}
+    	}
+    \end{figure}   
+
+Algumas das figuras podem ser formadas por várias figuras e as mesmas referenciadas no texto. O pacote \texttt{subfigure}  permite inserir e identificar cada uma destas figuras. A \autoref{fig:estrutura} mostra um exemplo de como colocar duas figuras lado a lado com rótulos próprios para referenciamento no texto. A \autoref{fig:estuturaABNT1} aponta para a figura da esquerda e \autoref{fig:estuturaTCC1} a da direita. 
+
+
+\begin{figure}[!ht]
+	\centering
+	\caption{Estruturas de trabalhos pela ABNT e o adotado pela Área da Informática da UCS.}
+	\label{fig:estrutura} 
+	\begin{subfigure}{0.45\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{figuras/estruturaABNT.png}
+		\caption{Estrutura de Documentos conforme a ABNT}
+		\label{fig:estuturaABNT1}
+	\end{subfigure}
+	\begin{subfigure}{0.45\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{figuras/estruturaTCC.png}
+		\caption{Estrutura do TCC }
+		\label{fig:estuturaTCC1}
+	\end{subfigure}
+			
+	\fonte{O Autor (2021).}
+		
+\end{figure}
+
+O \autorefanexo{anex:exemploFiguras} apresenta mais exemplos de figuras que utilizam o \texttt{subfigure}. 
+
+No caso de imagens retiradas da internet, não é necessário adicionar a URL do site na lista de referências do trabalho. Como o objetivo é somente ilustrar, pode-se referenciar o website. A \autoref{fig:exemploImagemInternet} mostra um exemplo de citação da fonte de internet. 
+
+\begin{figure}[!ht]
+	\caption{Exemplo de figura com fonte da internet.}
+	\centering 
+	\label{fig:exemploImagemInternet}
+	\UCSfigura {}{ 
+		\includegraphics[width = 0.45\textwidth]{figuras/biblio-central.jpg}
+		}{ 	\fonte{Disponível em: <https://www.ucs.br/site/biblioteca/biblioteca-central/>. Acesso em 21 mai. 2021} 
+		}
+\end{figure} 
+
+% ---
+\subsection{Tabelas}
+% ---
+As tabelas apresentam informações numéricas tratadas
+estatisticamente \cite{ibge1993}. A estrutura da tabela é constituída de traços (retas perpendiculares) e delimitada, na parte superior e na parte inferior por traços horizontais paralelos. Não delimitar (fechar) por traços verticais os extremos da tabela à direita e à esquerda. A \autoref{tab:ibge} é um exemplo de tabela conforme o padrão IBGE requerido pelas normas da ABNT para documentos técnicos e acadêmicos. Além da fonte na parte inferior da tabela, o exemplo traz como se insere uma nota e anotações, quando necessários. O comando \texttt{IBGEtab} garante o alinhamento da fonte no lado esquerdo da tabela.  
+
+\begin{table}[!ht]
+	\caption{\label{tab:ibge} Um Exemplo de tabela alinhada que pode ser longa ou curta}%
+	\IBGEtab{}{
+		\begin{tabular}{lccc}
+			\toprule
+			\textbf{Pessoa} & \textbf{Idade} & \textbf{Peso} & \textbf{Altura} \\
+			\midrule \midrule
+			Marcos          & 26             & 68            & 178             \\
+			Ivone           & 22             & 57            & 162             \\ 
+			...             & ...            & ...           & ...             \\
+			Sueli           & 40             & 65            & 153             \\ 
+			\bottomrule
+		\end{tabular}
+		}{
+		\fonte{O Autor (2021).}
+		\nota{esta é uma nota, que diz que os dados são baseados na
+		regressão linear.}
+		\nota[Anotações]{uma anotação adicional, seguida de várias outras.}
+	}
+\end{table}
+    
+O \autoref{cap:exemploTabelas} apresenta mais exemplos de tabelas, incluindo uma tabela que ultrapassa uma página (formatação própria). 
+
+% ---
+\subsection{Quadros}
+% ---
+
+A formatação do quadro é similar à tabela, mas deve ter suas laterais fechadas e conter as linhas horizontais. O \autoref{quad:exemplo} mostra um exemplo do uso de quadro no texto. O comando \texttt{UCSQuadro} garante o alinhamento da fonte no lado esquerdo do quadro.   
+
+\begin{quadro}[!ht]
+	\caption{\label{quad:exemplo} Exemplo de quadro}
+	\UCSQuadro{}{%
+	\begin{tabular}{|c|l|c|}
+		\hline
+		\textbf{Norma} & \textbf{Título} & \textbf{Ano de Publicação} \\
+		\hline
+		NBR 14724  & Trabalho Acadêmico    & 2011  \\ \hline
+		NBR 10520   & Citações   & 2002   \\ \hline
+		NBR 6023  & Referências & 2018 (Versão Corrigida 2:2020)  \\ \hline
+		NBR 6027   & Sumário    & 2012  \\ \hline
+		NBR 6028  & Resumo e Abstract     & 2003   \\ \hline
+		NBR 6024  & Numeração progressiva das seções    & 2012 \\ \hline
+		NBR 6034  & Índice    & 2004   \\ \hline
+	\end{tabular}
+	}{
+	\fonte{O Autor (2021).
+	}
+}\end{quadro}
+
+O \autoref{cap:exemploQuadros} apresenta mais exemplos de quadros, incluindo um quadro que ultrapassa uma página (formatação própria). 
+
+\subsection{Algoritmos/Códigos Fontes}    
+    
+Não existe uma norma que padronize a formatação de algoritmos ou código fontes em trabalhos técnicos. Neste modelo, utiliza-se o pacote \textit{Listings} \footnote{https://ctan.org/pkg/listings} para a formatação. 
+
+Para facilitar a utilização deste recurso, a linguagem padrão de formatação é C, conforme consta no arquivo TCC.tex e ilustrado na  \ref{fig:linguagem}. Caso não seja C a linguagem mais utilizada, substitua pelo nome da linguagem a ser utilizada conforme o padrão definido na documentação do pacote \textit{Listings}.
+
+\begin{figure}[!ht]
+\centering 
+\caption{Configuração do pacote \textit{Listings}}
+\label{fig:linguagem}
+\UCSfigura{}{%
+    \includegraphics[scale=0.70]{figuras/linguagem.png}
+}{%
+ \fonte{O Autor (2021).}%
+ }
+\end{figure}
+
+Um exemplo é apresentado no Algoritmo \ref{codigo:exemplo1}. Nota que para a configuração deste algoritmo, foram utilizadas somente 2 campos: \textit{caption} e \textit{label}. 
+
+\begin{lstlisting}[ caption={Exemplo de código em C},
+                    label={codigo:exemplo1}]
+#include <stdio.h>
+int main() {    
+    int numero1, numero2, soma;
+    
+    printf("Digite 2 numeros: ");
+    scanf("%d %d", &numero1, &numero2);
+
+    // Calcular a soma
+    soma = numero1 + numero2;      
+    
+    printf("%d + %d = %d", numero1, numero2, soma);
+    return 0;
+}
+\end{lstlisting}
+\fonte{O Autor (2021)}
+
+No caso de precisar adicionar um código que não seja da linguagem padrão, pode-se fazer utilizando o campo \textit{language} ( \verb!\begin{lstlisting}[language=Python,...]!). Um exemplo de um código na linguagem Python é mostrado no Algoritmo \ref{codigo:exemplo2}).
+
+\begin{lstlisting}[language=Python,
+                    caption={Exemplo de código em Python},
+                    label={codigo:exemplo2}]
+n = int(input("Digite o valor de n: "))
+fatorial = 1
+while (n > 0):
+    fatorial = fatorial * n
+    n -= 1
+print(fatorial)
+\end{lstlisting}
+\fonte{O Autor (2021)}
+
+\section{SIGLAS}
+\label{sec:siglas}
+
+Para utilizar siglas, primeiro defina a sigla no arquivo "acronimos.tex"~ na pasta "1-pre-textuais"~com o comando 
+
+ \begingroup
+\fontsize{10pt}{12pt}\selectfont
+   \verb!\acro{PC}{Personal Computer}!
+\endgroup
+    
+O comando deve ser colocado no arquivo de tal maneira que mantenha a ordem alfabética. O \textit{LaTex} garante somente se ela deve ser mostrada ou não na lista.
+
+Para referenciar a sigla, deve-se utilizar o comando:
+
+\begingroup
+\fontsize{10pt}{12pt}\selectfont
+\verb!\ac{PC}! \newline
+\endgroup
+
+A primeira vez que o comando é usado para uma determinada sigla, aparece o significado por extenso da sigla com a sua abreviação em seguida, desta maneira --- \ac{PC}. A partir da segunda vez que o comando para uma determinada sigla é usado, aparace apenas a sigla --- \ac{PC}. Assim, o autor nunca terá que se preocupar com a regra de sempre colocar a sigla por extenso na primeira vez. 
+
+No caso de utilizar o plural da sigla, utilize-o com a letra s após a referência, como em \acp{PC}. Para referenciar a sigla no plural, deve-se utilizar o comando:
+
+\begingroup
+\fontsize{10pt}{12pt}\selectfont
+\verb!\acp{PC}! \newline
+\endgroup
+
+É muito comum ver em trabalhos o uso de 's após a sigla. Este tipo de construção é utilizada para o possessivo da língua inglesa. 
+
+\textbf{Não use siglas nos títulos e evite fortemente usar no Resumo. }
+
+% ---
+\section{ENUMERAÇÕES: ALÍNEAS e SUB-ALÍNEAS}
+\label{sec:enum} 
+% ---
+
+Quando for necessário enumerar os diversos assuntos de uma seção que não possua título, esta deve ser subdividida em alíneas \cite[4.2]{NBR6024:2012}:
+
+\begin{alineas}
+  \item os diversos assuntos que não possuam título próprio, dentro de uma mesma
+  seção, devem ser subdivididos em alíneas; 
+  
+  \item o texto que antecede as alíneas termina em dois pontos;
+  \item as alíneas devem ser indicadas alfabeticamente, em letra minúscula,
+  seguida de parêntese. Utilizam-se letras dobradas, quando esgotadas as
+  letras do alfabeto;
+
+  \item as letras indicativas das alíneas devem apresentar recuo em relação à
+  margem esquerda;
+
+  \item o texto da alínea deve começar por letra minúscula e terminar em
+  ponto-e-vírgula, exceto a última alínea que termina em ponto final;
+
+  \item o texto da alínea deve terminar em dois pontos, se houver subalínea;
+
+  \item a segunda e as seguintes linhas do texto da alínea começa sob a
+  primeira letra do texto da própria alínea;
+  
+  \item subalíneas \cite[4.3]{NBR6024:2012} devem ser conforme as alíneas a
+  seguir:
+
+  \begin{alineas}
+     \item as subalíneas devem começar por travessão seguido de espaço;
+
+     \item as subalíneas devem apresentar recuo em relação à alínea;
+
+     \item o texto da subalínea deve começar por letra minúscula e terminar em
+     ponto-e-vírgula. A última subalínea deve terminar em ponto final, se não
+     houver alínea subsequente;
+
+     \item a segunda e as seguintes linhas do texto da subalínea começam sob a
+     primeira letra do texto da própria subalínea.
+  \end{alineas}
+  
+  \item no \abnTeX\ estão disponíveis os ambientes \texttt{incisos} e
+  \texttt{subalineas}, que em suma são o mesmo que se criar outro nível de
+  \texttt{alineas}, como nos exemplos a seguir:
+  
+  \begin{incisos}
+    \item \textit{Um novo inciso em itálico};
+  \end{incisos}
+  
+  \item Alínea em \textbf{negrito}:
+  
+  \begin{subalineas}
+    \item \textit{Uma subalínea em itálico};
+    \item \underline{\textit{Uma subalínea em itálico e sublinhado}}; 
+  \end{subalineas}
+  
+  \item Última alínea com \emph{ênfase}.
+  
+\end{alineas}
+
+É possível modificar a enumeração para utilizar outras sequências. Deve-se colocar o novo símbolo entre colchetes após o comando \verb=\item[]=. Um exemplo de enumeração alterando a sequência pode ser definido da seguinte forma:
+
+\begin{alineas}
+	\item[1.] primeiro item
+	\item[2.] segundo item
+	\begin{alineas}
+		\item[a)] primeiro subalínea 
+		\item[b)] segundo subalínea
+	\end{alineas}
+	\item[3.] terceiro item
+\end{alineas}
+
+Existem diversos símbolos pré-definidos que podem ser utilizados para a enumeração:
+
+\begin{alineas}
+	\item[$\times$] primeiro item
+	\item[$\bullet$] segundo item
+	\item[$\diamond$] terceiro item
+	\item[$\cdot$] quarto item
+	\item[$\ast$] quinto item
+	\item[$\circ$] sexto item
+	\item[$-$] sétimo item
+\end{alineas}
+
+\section{CITAÇÕES} 
+
+As citações são menções de informações extraídas de outras fontes \cite{NBR10520:2002}. Elas podem ser uma transcrição textual de parte da obra (citação direta) ou um texto que transcreve a informação com as palavras do autor do trabalho (citação indireta). 
+No caso de citações indiretas, existem duas formas de realizar a citação:
+
+\begin{itemize}
+	\item \textbf{Início ou meio da frase}: deve-se citar o autor com a primeira letra em maiúsculo e colocar em seguida, entre parênteses o ano. Para esta construção, utiliza-se o comando \verb=\citeonline{}=. Por exemplo,  \citeonline{Acevedo2013}. No caso de querer adicionar o intervalo de páginas, o comando é  \verb=\citeonline[p. 10--15]{key}=. Por exemplo, \citeonline[pp. 21--30]{Acevedo2013}. No caso de somente uma página, o comando é  \verb=\citeonline[p. 10]{key}=. Por exemplo, \citeonline[pp. 21]{Acevedo2013}.
+	          
+	\item \textbf{Final da frase}: deve-se citar entre parênteses o autor em letras maiúsculas e colocar em seguida, entre parênteses o ano. Para esta construção, utiliza-se o comando \verb=\cite{}=. Por exemplo, \cite{Acevedo2013}. No caso de querer adicionar o intervalo de páginas, o comando é \verb=\cite[p. 10--15]{key}=. Por exemplo, \cite[pp. 21--30]{Acevedo2013}. No caso de somente uma página, o comando é  \verb=\cite[p. 10]{key}=. Por exemplo, \cite[p. 21]{Acevedo2013}.
+\end{itemize}
+
+Para realizar a citação direta de um texto longo (mais de 3 linhas), deve-se utilizar o seguinte comando: \verb=\begin{citacao} trecho transcrito \end{citacao}=. Por exemplo, 
+\begin{citacao}
+	As citações diretas, no texto, com mais de três linhas, devem ser destacadas com recuo de 4 cm da margem esquerda, com letra menor que a do texto utilizado e sem as aspas. No caso de documentos datilografados, deve-se observar apenas
+	o recuo \cite[p. 2]{NBR10520:2002}.
+\end{citacao}
+
+No caso de não ter acesso à publicação original, é possível realizar a citação de uma citação, ou seja, a transcrição direta ou indireta de um texto ao qual não se teve acesso ao original. Existe uma formatação própria para realizar este tipo de citação utilizando o termo apud ("citado por"). A citação é composta pelo nome do autor original (ao qual não se teve acesso à obra e não deve constar nas referências do trabalho), o termo apud e o nome do autor da obra consultada (a qual deve constar nas referências do trabalho). Por exemplo, no Guia de Trabalhos Acadêmicos da UCS (\cite{guiaUCS}) existe a menção da norma 12225 da ABNT. A sua citação pode ser realizada da seguinte maneira:
+
+\begingroup
+\begin{adjustwidth}{2cm}{2cm}
+    \noindent
+	As informações devem ser impressas conforme a norma ABNT NBR 12225:2004 (\citeauthor{nbr12225:2004}, \citeyear{nbr12225:2004}\footnote{ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS.\textbf{NBR 10520}: Informação e documentação — lombada — apresentação. Rio de Janeiro, 2004. 3 p.} apud \citeauthor{guiaUCS}, \citeyear{guiaUCS}). 
+	
+	\centering ou
+	
+	\justifying
+	\noindent\citeauthor{nbr12225:2004}\footnote{ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS.\textbf{NBR 10520}: Informação e documentação — lombada — apresentação. Rio de Janeiro, 2004. 3 p.} ( \citeyear{nbr12225:2004} apud \citeauthor{guiaUCS}, \citeyear{guiaUCS}) define as normas de como as informações devem ser impressas na lombada. 
+\end{adjustwidth}
+\endgroup
+
+Em ambos os exemplos, o texto da referência original deve ser colocada no rodapé. De modo a reduzir a digitação, os dados da referência original podem ser colocados no arquivo de bibliografias (referencias.bib), mas utilizando o identificador @hidden (para que não faça parte da lista de referências):
+
+\begingroup
+\fontsize{10pt}{12pt}\selectfont
+\begin{verbatim}
+      @hidden{NBR12225:2004, 
+          Address = {Rio de Janeiro},  
+          Organization = {ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS}, 
+          Pages = 3,  
+          Subtitle = {Informação e documentação - lombada - apresentação},
+          Title = {{NBR} 12225}, 
+          Year = 2004
+       }  
+\end{verbatim}
+\endgroup
+
+% ---
+\section{EXPRESSÕES MATEMÁTICAS}
+\label{sec:expressoes}
+% ---
+
+As expressões matemáticas devem ser escritas utilizando ambiente \texttt{equation} para serem numeradas (para que sejam referenciadas):
+
+\begin{equation}\label{eq:exemplo1}
+\hat{c} = \underset{c}{\arg\max}  P(\textbf{x}|c).
+\end{equation}
+
+A referência a uma equação deve utilizar o comando \verb!autoref{}!. A \autoref{eq:exemplo1} é um exemplo de referência. 
+
+No caso de uma expressão não necessitar ser numerada, é possível usar colchetes para indicar o início de uma expressão:
+
+\[
+\left|\sum_{i=1}^n a_ib_i\right|
+\le
+\left(\sum_{i=1}^n a_i^2\right)^{1/2}
+\left(\sum_{i=1}^n b_i^2\right)^{1/2}
+\]
+
+Se a expressão matemática puder estar na mesma linha do texto, pode-se escrever expressões matemáticas entre cifrões (\$), como em $ \lim_{x \to \infty} \exp(-x) = 0 $.
+
+Consulte mais informações sobre expressões matemáticas em
+\url{https://github.com/abntex/abntex2/wiki/Referencias}.
+
+\section{FORMATAÇÃO DO FONTE}
+
+Para uma formatação do \textit{LaTex}, pode-se utilizar o formatador online do C. Albert Thompson  \footnote{https://c.albert-thompson.com/latex-pretty/}. Este site realiza a indentação do código-fonte \textit{LaTex}. 
+

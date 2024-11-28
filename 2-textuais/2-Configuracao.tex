@@ -1,0 +1,212 @@
+\chapter{CONFIGURAÇÃO E ESTRUTURA DO TRABALHO}
+\label{cap:configuracao}
+
+Este capítulo tem por objetivo apresentar a estrutura do modelo do \ac{TCC} e descrever o processo de configuração do documento no editor online de documentos \textit{LaTex} Overleaf. A \autoref{sec:estruturaTC} apresenta a estrutura do trabalho de conclusão conforme a ABNT. A \autoref{sec:modeloTCC} descreve o modelo a ser utilizado e a sua estrutura. A \autoref{sec:primeiraConfiguracao} descreve os primeiros passos na configuração do trabalho. 
+
+\section{ESTRUTURA DO TRABALHO DE CONCLUSÃO}
+\label{sec:estruturaTC}
+Conforme a norma ABNT NBR 14724:2011, a estrutura de teses, dissertações, \ac{TCC}, entre outros, compreende elementos obrigatórios e opcionais (e a sua respectiva ordem). Como o foco deste documento é \ac{TCC}, a Figura \ref{fig:estruturaTCC} apresenta os elementos obrigatórios e opcionais de um TCC. A ordem em que eles são apresentados deve ser mantido no documento. 
+
+\begin{figure}[h]
+	\caption{Estrutura do Trabalho de Conclusão para os cursos da Área da Informática}
+	\centering 
+	\label{fig:estruturaTCC}
+	\UCSfigura {}{ 
+	\includegraphics{figuras/estruturaTCC.png}
+		}{
+	\fonte{Adaptado de \citeonline{guiaUCS}.}
+	}
+\end{figure}    
+
+Com o objetivo de simplificar o processo de confecção do \ac{TCC}, alguns elementos da estrutura não precisam constar na monografia submetida na primeira disciplina do \ac{TCC}. Tais elementos são mais apropriados para versão final da monografia na segunda e última disciplina de trabalho de conclusão de curso.  Os elementos são: 
+\begin{itemize}
+	\item Folha de aprovação
+	\item Dedicatória
+	\item Agradecimentos
+	\item Epígrafe
+	\item Resumo na língua estrangeira
+\end{itemize}
+Exceto a folha de aprovação, os demais elementos são opcionais e não precisam constar mesmo na monografia final.
+
+É importante que o aluno utilize como base o guia de elaboração de trabalhos acadêmicos da UCS\cite{guiaUCS} para maiores detalhes.  
+
+\section{MODELO DO TRABALHO DE CONCLUSÃO}
+\label{sec:modeloTCC}
+
+Para facilitar a formatação dos trabalhos de conclusão, este documento foi construído utilizando a ferramenta de edição de documentos \textit{LaTex} chamada \textit{Overleaf}\footnote{\url{http://overleaf.com}}. O \textit{Overleaf} é uma ferramenta \textit{online} que pode ser acessada por qualquer navegador de internet até mesmo de um \textit{smartphone}. Uma das vantagens desta ferramenta é a possibilidade de compartilhar o seu trabalho com o seu orientador. Assim, ele terá acesso imediato ao texto e realizar comentários acerca do trabalho. É necessário ter uma conta (grátis) em seu site para utilizá-lo. 
+
+\subsection{Carregar o Modelo TCC} 
+\label{subsec:loadTCC} 
+
+Para começar o trabalho de edição, primeiramente é necessário o arquivo de projeto. O projeto nesta plataforma é um arquivo .zip. 
+
+Após se conectar no site do \textit{Overleaf}, você deve realizar a carga do projeto. Clique em \textbf{Novo Projeto} e um menu de opções deve aparecer. Em seguida selecione a opção \textbf{Carregar Projeto}. Uma nova janela será aberta para você escolher ou arrastar um arquivo .zip. Utilize o projeto zipado disponibilizado pelo coordenador de \ac{TCC}. 
+
+Altere o nome do projeto para facilitar a sua identificação. Uma sugestão é colocar TCC 1 ou 2 seguido pelo nome do aluno. Por exemplo, no caso do TCC 1 do aluno Carlos Heinz, o nome do projeto será TCC 1 - Carlos Heinz. 
+
+\begin{tabular}{|l|c|} \hline
+	DICA:  Carregue o projeto novamente para ter uma cópia de referência. 
+                                                        \\\hline
+\end{tabular}
+
+\subsection{Estrutura do Projeto}
+\label{sec:estruturaModelo} 
+
+Ao abrir o projeto no Overleaf, a aba \textit{Project} (lateral esquerda) deve mostrar as pastas e arquivos, conforme ilustrado na \autoref{fig:modelo}:
+\begin{alineas}
+	\item 1-pre-textuais: pasta que contém os arquivos dos elementos pré-textuais: acrônimos, agradecimentos, folha de aprovação, dedicatória, epígrafe, resumos e lista de símbolos.
+	\item 2-textuais: pasta que contém os arquivos dos elementos textuais (isto é, os capítulos da monografia --- da introdução à conclusão)
+	\item 3-pos-textuais: pasta que contém os arquivos dos elementos pós-textuais: anexos, apêndices e a bibliografia.
+	\item figuras: pasta que contém as figuras do trabalho.
+	\item abntex2.cls: configuração da formatação (NÃO ALTERAR).
+	\item TCC.tex: documento com as configurações do modelo. 
+\end{alineas}
+
+\begin{figure}[!ht]
+	\caption{Aba \textit{Project} do modelo}
+	\centering 
+	\label{fig:modelo}
+	\UCSfigura {}{ 
+		\includegraphics{figuras/modelo.png}
+		}{
+		\fonte{O Autor (2021).}
+	}
+\end{figure}    
+
+\subsection{Compartilhar o Projeto}
+\label{sec:compartilhar} 
+
+A versão grátis da ferramenta \textit{Overleaf} permite o compartilhamento do projeto com somente um usuário. No caso de um trabalho acadêmico, este compartilhamento poder ser feito com o orientador. 
+
+Para compartilhar o projeto, deve-se estar editando o projeto. Clique no link \textbf{Compartilhar} no topo da página (lado direito). Uma janela será aberta para informar o e-mail de quem deve receber o compartilhamento. Em seguida, clique no botão compartilhar. 
+
+\subsection{Atualizar o Projeto}
+\label{sec:atualizar} 
+
+O ambiente mostra na lateral direita uma versão compilada do documento para verificação. 
+
+Para que cada alteração seja mostrada na versão compilada, deve-se clicar no botão Recompilar (acima do painel de visualização). 
+
+No caso de alterar Para compartilhar o projeto, deve-se estar editando o projeto. Clique no link \textbf{Compartilhar} no topo da página (lado direito). Uma janela será aberta para informar o e-mail de quem deve receber o compartilhamento. Em seguida, clique no botão compartilhar. 
+
+
+\section{PRIMEIRA CONFIGURAÇÃO}
+\label{sec:primeiraConfiguracao} 
+
+A primeira configuração tem por objetivo alimentar o projeto com as informações necessárias da monografia e atualizar a estrutura da monografia. 
+
+\subsection{Identificações}
+
+As informações de autoria, orientação e curso devem ser alteradas no arquivo TCC.tex, conforme ilustrado na \autoref{fig:info}. Informe os dados nos campos \texttt{titulo}, \texttt{autor}, \texttt{local}, \texttt{data} e \texttt{orientador}. No caso de não possuir um co-orientador, eliminar a linha do campo \texttt{coorientador} (linha 113).
+
+A natureza do trabalho utilizada na folha de rosto e de aprovação é definida por meio do campo \texttt{preambulo}. Deve-se alterar somente o nome do curso (Ciência da Computação, Sistemas de Informação, Engenharia de Computação, ...). Para os alunos que são do campus da região dos Vinhedos, este campo pode incluir a identificação do campus: \textbf{Trabalho de Conclusão de Curso apresentado como requisito parcial à obtenção do título de Bacharel em Ciência da Computação na Área do Conhecimento de Ciências Exatas e Engenharias, Campus Universitário da Região dos Vinhedos, da Universidade de Caxias do Sul.  
+}
+\begin{figure}[!ht]
+	\caption{Linhas do arquivo TCC.tex com as informações do trabalho}
+	\centering 
+	\label{fig:info}
+	\UCSfigura {}{ 
+		\includegraphics{figuras/info1.png}
+		}{
+		\fonte{O Autor (2021).}
+	}
+\end{figure}   
+
+\subsection{Folha de Aprovação} 
+
+Este elemento pré-textual deve ser inserido na monografia submetida na segunda disciplina de trabalho de conclusão. Duas informações devem ser preenchidas no arquivo aprovacao.tex na pasta 1-pre-textuais:
+
+\begin{itemize}
+    \item Data de Aprovação: deve ser preenchida com a data de apresentação de trabalho. Alterar o comando \verb!\large\textbf{Aprovado em 00/07/2021}!.
+    \item Menbros da Banca: apesar do nome do orientador ser preenchido automaticamente, os membros da banca devem ser preenchidos manualmente. Os nomes dos membros da banca devem ser preenchidos com a respectiva titulação (Esp. --- Especialista, Me. ou Ma. --- Mestre, Dr. ou Dra. --- Doutor):
+    \begingroup
+    \fontsize{10pt}{12pt}\selectfont
+    \begin{verbatim}
+\assinatura{\ABNTEXchapterfont\large{Prof. Dra. Nome do Membro 1 da Banca} 
+                                    \\ Universidade de Caxias do Sul - UCS}
+\assinatura{\ABNTEXchapterfont\large{Prof. Dr. Nome do Membro 2 da Banca} 
+                                    \\ Universidade de Caxias do Sul - UCS}
+    \end{verbatim}
+    \endgroup
+\end{itemize}
+
+\subsection{Elementos Opcionais} 
+
+Alguns elementos do documento são opcionais ou não precisam necessariamente aparecer na monografia submetida na disciplina de Trabalho de Conclusão I \footnote{Verifique com a coordenação do seu curso sobre os itens obrigatórios que não precisam ser submetidos na respectiva disciplina}:
+
+
+\begin{alineas}
+	\item \textbf{Folha de aprovação}: este item é opcional na monografia submetida para a primeira disciplina de trabalho de conclusão, mas é obrigatória para aversão final na segunda e última disciplina. Para que este elemento não apareça, deve-se comentar as linhas no arquivo TCC.tex que o incluem:
+	\begingroup
+	\begin{verbatim}
+    \newpage
+    \include{1-pre-textuais/aprovacao}
+	\end{verbatim}
+	\endgroup
+	\item \textbf{Dedicatória}: como este item é opcional, ele pode ser excluído do projeto. Nesse caso, deve-se apagar o arquivo dedicatoria.tex na pasta 1-pre-textuais e a linha no arquivo TCC.tex:
+	\begingroup
+	\begin{verbatim}
+    \imprimirdedicatoria{1-pre-textuais/dedicatoria}
+	\end{verbatim}
+	\endgroup
+	\item \textbf{Agradecimentos}: como este item é opcional, ele pode ser excluído do projeto. Nesse caso, deve-se apagar o arquivo agradecimentos.tex na pasta 1-pre-textuais e a linha no arquivo TCC.tex:
+	\begingroup
+	\begin{verbatim}
+    \imprimiragradecimentos{1-pre-textuais/agradecimentos}
+	\end{verbatim}
+	\endgroup        
+	\item \textbf{Epígrafe}: como este item é opcional, ele pode ser excluído do projeto. Nesse caso, deve-se apagar o arquivo epigrafe.tex na pasta 1-pre-textuais e a linha no arquivo TCC.tex:
+	\begingroup
+	\begin{verbatim}
+    \include{1-pre-textuais/epigrafe}
+	\end{verbatim}
+	\endgroup   
+	\item \textbf{Abstract}: o resumo na língua estrangeira é opcional. Por isso, ele pode ser excluído do projeto. Nesse caso, deve-se apagar o arquivo abstract.tex na pasta 1-pre-textuais e a linha no arquivo TCC.tex:.
+	\begingroup
+	\begin{verbatim}
+    \include{1-pre-textuais/abstract}
+	\end{verbatim}
+	\endgroup   
+	\item \textbf{Abreviaturas e Siglas}: como este item é opcional, ele pode ser excluído do projeto. No caso de exclusão, deve-se apagar o arquivo acronimos.tex na pasta 1-pre-textuais e a linha no arquivo TCC.tex:
+	\begingroup
+	\begin{verbatim}
+    \include{1-pre-textuais/acronimos}
+	\end{verbatim}
+	\endgroup      
+	\item \textbf{Símbolos}: como este item é opcional, ele pode ser excluído do projeto. No caso de exclusão, deve-se apagar o arquivo simbolos.tex na pasta 1-pre-textuais e a linha no arquivo TCC.tex:
+	\begingroup
+	\begin{verbatim}
+    \include{1-pre-textuais/simbolos}
+	\end{verbatim}
+	\endgroup      
+	\item \textbf{Apêndices}: se o trabalho não possui anexos, ele pode ser excluído do projeto. No caso de exclusão, deve-se apagar o arquivo anexos.tex na pasta 1-pre-textuais e a linha no arquivo TCC.tex:
+	\begingroup
+	\begin{verbatim}
+    \include{3-pos-textuais/anexos}
+	\end{verbatim}
+	\endgroup      
+	\item \textbf{Anexos}: se o trabalho não possui anexos, ele pode ser excluído do projeto. No caso de exclusão, deve-se apagar o arquivo anexos.tex na pasta 1-pre-textuais e a linha no arquivo TCC.tex:
+	\begingroup
+	\begin{verbatim}
+    \include{3-pos-textuais/anexos}
+	\end{verbatim}
+	\endgroup
+\end{alineas}
+
+\subsection{Elementos Textuais}
+
+Este projeto traz 6 capítulos, onde a introdução é o primeiro e o de conclusão o último. Caso o trabalho tenha menos capítulos, deve-se apagar a linha que o insere no documento no arquivo TCC.tex: 
+ 
+\begingroup
+\begin{verbatim}  
+    \include{2-textuais/1-introducao}
+    \include{2-textuais/2-Configuracao}
+    \include{2-textuais/3-Comandos}
+    \include{2-textuais/4-Referencias}
+    \include{2-textuais/5-Dicas}
+    \include{2-textuais/6-Conclusoes}
+\end{verbatim}
+\endgroup
+
+A numeração no nome do arquivo é para garantir uma ordenação dos arquivos. Caso o nome do arquivo seja alterado, deve-se manter a numeração para garantir a ordem dos capítulos na visualização. 
+
